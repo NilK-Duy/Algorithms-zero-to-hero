@@ -4,25 +4,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
+    let obj = {}
     const len = nums.length
-    let array1 = []
-    let array2 = []
-    const halfTarget = Math.floor(target / 2)
-    for(let i = 0; i < len; i++) {
-        if ( nums[i] <= halfTarget ) {
-            array1.push(i)
-        } else if ( nums[i] <= target ) {
-            array2.push(i)
-        }
-    }
-
-    const len1 = array1.length
-    const len2 = array2.length
-    for(let i = 0; i < len1; i++) {
-        for(let j = 0; j < len2; j++) {
-            if(nums[array1[i]] + nums[array2[j]] === target) {
-                return [array1[i],array2[j]]
-            }
+    for (let i = 0; i < len; i++) {
+        let diff = target - nums[i]
+        if (diff in obj) {
+            return [obj[diff], i]
+        } else {
+            obj[nums[i]] = i
         }
     }
 }

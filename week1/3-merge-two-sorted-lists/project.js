@@ -1,24 +1,18 @@
 /**
- * @param {string} s
- * @return {boolean}
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
  */
-var isValid = function(s) {
-  const stack = []
-  const len = s.length
-  pairs = {
-    '(': ')',
-    '[': ']',
-    '{': '}'
-  }
-  for (let i = 0; i < len; i++) {
-    if (s[i] in pairs) {
-      stack.push(s[i])
-    } else if (stack.length === 0 || (pairs[stack.pop()] !== s[i])) {
-      return false
-    }
-  }
-  return stack.length === 0
-}
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(list1, list2) {
+    
+};
 
 // Read data from txt file
 const fs = require('fs')
